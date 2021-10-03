@@ -1,5 +1,6 @@
-[
-    "./app/js/**/*.js",
+[    
     "./node_modules/angular/angular.js",
-    "./node_modules/angular-route/angular-route.js"
+    "./node_modules/angular-route/angular-route.js",
+    "./app/js/modules/**/*.js",
+    "./app/js/controllers/**/*.js"
 ]

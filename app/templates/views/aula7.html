@@ -1,0 +1,24 @@
+<html>
+<head>
+    <meta charset="utf-8">    
+    <title>Aula 07</title>        
+    <script src='../js/scripts.js'></script>
+</head>
+<body>
+    <div ng-app="app">
+        <div ng-controller="aula7Controller">
+            <ui>
+                <li ng-repeat="nome in nomes">{{nome}}</li>
+            </ui>
+            <div> 
+                <input type="text" id="nomePessoa">
+                <input type="number" id="idadePessoa">
+                <button type="button" ng-click="adicionaPessoa()">Adicionar</button>
+            </di>
+            <ui>
+                <li ng-repeat="pessoa in pessoas">Nome: {{pessoa.nome}} Idade: {{pessoa.idade}}</li>
+            </ui>
+        </div>        
+    </div>
+</body>
+</html>
