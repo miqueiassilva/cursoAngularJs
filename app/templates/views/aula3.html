@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>Aula 03</title>
+        <meta charset="utf-8">        
+        <script src='../js/scripts.js'></script>
+        <script>
+            
+            function loadWindow(){
+                document.getElementById("campo").value = total;
+            }
+            
+            var total = 1 + 2;
+            
+            console.log(total);
+            console.log("Teste do console");
+            
+            var pessoa = {
+                nome : "jaison schmidt",
+                idade : 31,
+                status : false
+            }    
+            
+            console.log(pessoa);
+            
+            var pessoas = [];
+            
+            pessoas.push(pessoa);
+            pessoas.push(pessoa);
+            pessoas.push(pessoa);
+            pessoas.push(pessoa);
+            
+            console.log(pessoas);
+            
+            if( pessoa.status == true ){
+                console.log("O usuário " +pessoa.nome + " está ativo");   
+            } else {
+                console.log("O usuário " +pessoa.nome + " está bloqueado");   
+            }
+            
+            for(var i = 1; i<=50; i++){
+                document.write("<p>" + i + "</p>");   
+            }
+            
+            
+            
+        </script>
+        
+    </head>
+    <body onload="loadWindow()">
+        <input value="" id="campo">
+    </body>
+</html>
