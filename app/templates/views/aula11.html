@@ -1,0 +1,24 @@
+<html>
+<head>
+    <meta charset="utf-8">    
+    <title>Aula 11</title>        
+    <script src='../js/scripts.js'></script>
+    <base href="/views/">
+</head>
+<body>
+    <div ng-app="app2">
+        <div ng-controller="aula11Controller">
+            <ul>
+                <li>
+                    <a href="./">Home</a>
+                    <a href="Pagina1">Página 1</a>
+                    <a href="Pagina2/1">Página 2</a>
+                </li>
+            </ul>
+            <p>Cabeçalho da Página</p>
+            <div ng-view></div>
+            <p>Rodapé da Pagina</p>
+        </div>        
+    </div>
+</body>
+</html>

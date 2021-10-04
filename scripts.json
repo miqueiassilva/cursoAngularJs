@@ -2,5 +2,8 @@
     "./node_modules/angular/angular.js",
     "./node_modules/angular-route/angular-route.js",
     "./app/js/modules/**/*.js",
-    "./app/js/controllers/**/*.js"
+    "./app/js/controllers/**/*.js",
+    "./app/js/services/**/*.js",
+    "./app/js/factory/**/*.js",
+    "./app/js/filter/**/*.js"
 ]

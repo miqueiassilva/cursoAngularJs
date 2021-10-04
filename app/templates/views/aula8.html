@@ -1,0 +1,61 @@
+<html>
+<head>
+    <meta charset="utf-8">    
+    <title>Aula 08</title>        
+    <script src='../js/scripts.js'></script>
+    <style>
+        input.ng-invalid.ng-touched{
+            background: red;
+            color: white;
+        }
+        input.ng-valid.ng-touched{
+            background: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div ng-app="app">
+        <div ng-controller="aula8Controller">
+            <form name="frm" ng-submit="adicionarPessoa(pessoa)" novalidate>
+                <p>
+                    Nome: <input type="text" ng-model="pessoa.nome" name="txtNomePessoa" required>                
+                </p>                    
+                <div ng-show="frm.$submitted || frm.txtNomePessoa.$touched">
+                    <div ng-show="frm.txtNomePessoa.$error.required">O Campo Nome deve ser preenchido!</div>
+                </div>
+                
+                <p>
+                    Email: <input type="email" ng-model="pessoa.email" name="txtEmailPessoa" required>                
+                </p>
+                <div ng-show="frm.$submitted || frm.txtNomePessoa.$touched">
+                    <div ng-show="frm.txtEmailPessoa.$error.required"> O Campo Email deve ser preenchido!</div>
+                    <div ng-show="frm.txtEmailPessoa.$error.email">Por favor, digite um e-mail correto!</div>
+                </div>
+                <p>
+                    Sexo: 
+                    <input type="radio" value="m" ng-model="pessoa.sexo"> Masculino                
+                    <input type="radio" value="f" ng-model="pessoa.sexo"> Masculino
+                </p>
+                <p>
+                    Estado:
+                    <select ng-model="pessoa.estado" required>
+                        <option ng-repeat="estado in estados" value="{{estado}}" ng-selected="estado==pessoa.estado">{{estado}}</option>
+                    </select>
+                </p>
+                <p>
+                    <input type="submit" ng-disabled="frm.$invalid" value="Salvar">                    
+                </p>
+
+                <pre>
+                    {{pessoa | json}}
+                </pre>
+
+                <pre>
+                    {{pessoas | json}}
+                </pre>
+            </form>
+        </div>        
+    </div>
+</body>
+</html>
