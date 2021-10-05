@@ -24,6 +24,14 @@ gulp.task('js',async function(){
     }));
 });
 
+gulp.task('imgs',async function(){
+    gulp.src('./app/imgs/**/*.jpg')
+    .pipe(gulp.dest('./dist/imgs'))
+    .pipe(browserSync.reload({
+        stream:true
+    }))
+});
+
 gulp.task('html',async function(){
     gulp.src('./app/templates/**/*.html')
     .pipe(gulp.dest('./dist/'))
@@ -32,7 +40,15 @@ gulp.task('html',async function(){
     }));
 });
 
-gulp.task('builder',gulp.series(['css','js','html']),function(){
+gulp.task('bd',async function(){
+    gulp.src('./app/bd/**/*.json')
+    .pipe(gulp.dest('./dist/bd'))
+    .pipe(browserSync.reload({
+        stream: true
+    }));
+});
+
+gulp.task('builder',gulp.series(['css','js','html','imgs','bd']),function(){
     done();
 });
 

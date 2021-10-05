@@ -1,0 +1,49 @@
+<html>
+<head>
+    <meta charset="utf-8">    
+    <title>Aula 12</title>        
+    <script src='../js/scripts.js'></script>
+    <style>
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+
+        .classNgClass{
+            font-size: 50px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div ng-app="appAula12">
+        <div ng-controller="aula12Controller">
+            <h1>ngShow e ngHide</h1>
+            <div ng-show="mostrar"> Este bloco mostra quando for "True"</div>
+            <div ng-hide="mostrar"> Este bloco mostra quando for "false"</div>
+            <div ng-show="!mostrar"> Este bloco mostra quando "Não for true"</div>
+            <input type="checkbox" ng-model="mostrar"> Mostrar
+        
+            <h1>Element</h1>
+            <a href="">Abrir uma nova Página</a>
+
+            <h1>ngBindHtml</h1>
+            {{ variavelHtml}}
+
+            <p ng-bind-html="variavelHtml"></p>
+            <h1>ngClass</h1>
+            <button type="button" ng-click="minhaClass='classNgClass'">Adiciona Class</button>
+            <button type="button" ng-click="minhaClass=''">Remove Class</button>
+            <div ng-class="minhaClass">Div para Teste</div>
+
+            <h1>ngCloak</h1>
+            <p>Previne que variáveis do tipo {{}} sejam exibidas no browser.</p>
+            <p ng-cloak class="ng-cloak">{{variavelCloak}}</p>
+
+            <h1>ngSrc</h1>
+            <img ng-src="../imgs/{{minhaFoto}}">
+            <button type="button" ng-click="minhaFoto='foto1.jpg'">Foto 1</button>
+            <button type="button" ng-click="minhaFoto='foto2.jpg'">Foto 2</button>
+        </div>        
+    </div>
+</body>
+</html>
